@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="A secondary pointer that will follow the mouse pointer when it is moved."/>
+    <!-- name="description" content="___" => Specifies a description of the page. Search engines can pick up this description to show with the results of searches. -->
+    
+    <meta name="keywords" content="secondary pointer, secondary, pointer, sshsrn"/>
+    <!-- name="keywords" content="____" => Specifies a comma-separated list of keywords - 
+        relevant to the page (Informs search engines what the page is about). -->
+    <!-- Used for SEO (Search Engine Optimisation...) -->
+    
+    <meta name="author" content="Srihari S">
+    <!-- name="author" content="___" => Specifies the name of the author of the document. -->
+    <title>secondary pointer</title>
+    <style>
+        .sec_pointer{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border-radius: 100%;
+            position: fixed;
+            /* transform: translate(-50%, -50%); */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="sec_pointer"></div>
+    <script>
+        const tracker = document.querySelector(".sec_pointer");
+        document.addEventListener("mousemove", e => {
+            tracker.style.left = `${e.clientX}px`;
+            tracker.style.top = `${e.clientY}px`;
+        });
+    </script>
 </body>
 </html>
